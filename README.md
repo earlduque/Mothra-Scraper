@@ -4,6 +4,7 @@ Created by: eduque
 
 All included files are open source, the VBA code in the excel file is not locked. All source code can be found at https://github.com/earliodookie/Mothra-Scraper
 
+To Start, download "Application Files" and unzip the folder.
 
 Initial Setup:
 
