@@ -1,0 +1,36 @@
+Sub ClearData()
+    Worksheets("Screens").Range("E2:L35").Clear
+End Sub
+
+Sub DisplayPeople()
+'
+' DisplayPeople Macro
+'
+If IsEmpty(Worksheets("Screens").Range("E2:E2").Value) Then
+    ActiveSheet.Paste Destination:=Worksheets("Screens").Range("E2:E2")
+Else
+    LastColumn = Worksheets("Screens").Range("A2:A2").End(xlToRight).Column
+    ActiveSheet.Paste Destination:=Worksheets("Screens").Cells(2, LastColumn + 1)
+End If
+End Sub
+Sub MoveLoginIDtoAHK()
+    Worksheets("Screens").Range("B27:B27").Copy
+End Sub
+Sub MoveOScreenChecktoAHK()
+    Worksheets("Screens").Range("D11:D11").Copy
+End Sub
+Sub MoreObjects()
+    ActiveSheet.Paste Destination:=Worksheets("Screens").Range("H25:H25")
+End Sub
+Sub MoveAScreenChecktoAHK()
+    Worksheets("Screens").Range("D12:D12").Copy
+End Sub
+Sub MorePermits()
+    ActiveSheet.Paste Destination:=Worksheets("Screens").Range("I25:I25")
+End Sub
+Sub CopyLastSearch()
+    Worksheets("Last Search").Range("A1:F38").Value = Worksheets("Summary").Range("A1:F38").Value
+End Sub
+Sub ClearSSN()
+    Worksheets("Screens").Range("G19:G19").Clear
+End Sub
