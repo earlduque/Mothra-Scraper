@@ -11,40 +11,29 @@ Initial Setup:
 Create a new PuTTY session, the session window must be named "AutoMothra" (with no quotations):
 
 	1. In the PuTTY Configuration window, Select Behavior
-	
 	2. In the "Window title:" field, type in AutoMothra
-	
 	3. Load other settings according to the SOP
 	
 	
-In order to the following files must be open:
+In order to run the macro, the following files must be open:
 
 	-Mothra Screens.xlsm
-	
 		-Open the file, enable Macros by selecting "Enable Content", and then say "Yes" to the Security Warning
 		
 	-MothraScraper.exe
-	
 		-Just open the file
 
 
 In order to run the scraper:
 
 	-Get to the Mothra landing page (open putty, bastion in, log in)
-	
 	-Go to Display Functions (D)
-	
 	-Go to Display MailID (F)
-	
 	-Type in a MailID and press enter, a valid user record should appear
-	
 	-Press Windows-M
-	
 	
 This app also adds the following functionality:
 
 	-Control+C no longer closes Mothra
-
 	-Control+V actually pastes
-	
-	-Contral+A selects all
+	-Contral+A selects all (might not work for everyone)
