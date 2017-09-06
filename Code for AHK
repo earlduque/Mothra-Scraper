@@ -1,4 +1,4 @@
-; If I'm looking at a putty window, modify the behavious or Control+C and Control+V	
+; If I'm looking at a putty window, modify the behaviours of Control+C and Control+V	
 #IfWinActive, ahk_exe putty.exe
 {
 	^v::
