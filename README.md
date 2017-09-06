@@ -17,11 +17,11 @@ Create a new PuTTY session, the session window must be named "AutoMothra" (with 
 	
 In order to run the macro, the following files must be open:
 
-	-Mothra Screens.xlsm
-		-Open the file, enable Macros by selecting "Enable Content", and then say "Yes" to the Security Warning
+	Mothra Screens.xlsm
+	-Open the file, enable Macros by selecting "Enable Content", and then say "Yes" to the Security Warning
 		
-	-MothraScraper.exe
-		-Just open the file
+	MothraScraper.exe
+	-Just open the file
 
 
 In order to run the scraper:
