@@ -32,7 +32,7 @@ In order to run the scraper:
 	-Go to Display Functions (D)
 	-Go to Display MailID (F)
 	-Type in a MailID and press enter, a valid user record should appear
-	-Press Windows-M
+	-Press Windows+Shift+M
 	
 This app also adds the following functionality:
 
