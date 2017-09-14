@@ -4,7 +4,7 @@ if ErrorLevel {
 	exitapp
 	}
 else
-    MsgBox, You entered "%MothraWindow%"`n`nPlease make sure Mothra Screens.xlsm is also open`n`nWindows+M (on mailID screen) will run the scraper`nControl+a will select all in Mothra`nControl+c in the Excel workbook on "Copy Screens" will grab the Mothra Screens and put it in the clipboard.
+    MsgBox, You entered "%MothraWindow%"`n`nPlease make sure Mothra Screens.xlsm is also open`n`nWindows+Shift+M (on mailID screen) will run the scraper`nControl+a will select all in Mothra`nControl+c in the Excel workbook on "Copy Screens" will grab the Mothra Screens and put it in the clipboard.
 
 	
 	
@@ -17,13 +17,13 @@ else
 		send, +{Insert} ;Turns ctrl+v into shift+insert
 		Return
 	^c::Return ;doesn't allow control+c
-}
+
 
 
 
 
 ; Windows+M does Mothra Magic, make sure to have a mothra window active on the mailid screen (with a valid mothra id visible) and the Mothra Screens.xlsm workbook open
-#m::
+#+m::
 	WinGetPos, X, Y, Width, Height
 	WinGetActiveTitle, Title
 	WinRestore, %Title%
@@ -159,11 +159,11 @@ else
 	WinMove, %Title%,, %X%, %Y%, %Width%, %Height%
 	Return
 
-
+}
 
 
 ; Control+S saves the script and if the script is in focus, reloads the script
-#IfWinActive, *C:\Users\eduque\Downloads\MyScript.ahk - Notepad++
+#If WinActive("*\\ou.ad3.ucdavis.edu\iet\Home Folders\eduque\Desktop\MothraScraper\Mothra Scraper.ahk - Notepad++")
 ~^s::
 	sleep 100
 	reload
@@ -173,7 +173,7 @@ else
 	
 	
 ; If Mothra Screens.xlsm - Excel active do these things
-#IfWinActive, Mothra Screens.xlsm
+#If WinActive("Mothra Screens.xlsm")
 ~^c::
 	sleep, 150
 	Xl := ComObjActive("Excel.Application") ;creates a handle to your Application object
