@@ -11,7 +11,11 @@
 	^c::Return ;doesn't allow control+c
 
 
-
+#z::
+	WinGetPos, , , xw, xy, dyad.gdc.ucdavis.edu - PuTTY
+	Sleep, 300
+	MouseClickDrag, left, 1, 1, xw, xy
+	Return
 
 
 ; Windows+M does Mothra Magic, make sure to have a mothra window active on the mailid screen (with a valid mothra id visible) and the Mothra Screens.xlsm workbook open
@@ -61,7 +65,7 @@
 	
 	MothraID = %clipboard%
 	;people
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Send, mp%MothraID%{Enter}
 	GrabScreen()
 	WinActivate, Mothra Screens.xlsm - Excel
@@ -69,7 +73,7 @@
 	Sleep, 750
 	
 	;IDs
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Send, mim%MothraID%{Enter}
 	GrabScreen()
 	WinActivate, Mothra Screens.xlsm - Excel
@@ -77,7 +81,7 @@
 	Sleep, 500
 	
 	;objects
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Send, mo%MothraID%{Enter}
 	Sleep, 500
 	GrabScreen()
@@ -89,7 +93,7 @@
 	NextScreenGo = More
 	ifInString, NextScreen, %NextScreenGo%
 	{
-		WinActivate, AutoMothra
+		WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 		Send, n
 		GrabScreen()
 		WinActivate, Mothra Screens.xlsm - Excel
@@ -101,7 +105,7 @@
 	LoginID = %clipboard%
 	
 	;LoginID
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Send, qma%LoginID%
 	GrabScreen()
 	WinActivate, Mothra Screens.xlsm - Excel
@@ -110,7 +114,7 @@
 	xl.Run("MoveAScreenChecktoAHK")
 	Sleep, 150
 	NextScreen = %clipboard%
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Sleep, 300
 	ifInString, NextScreen, %NextScreenGo%
 	{
@@ -121,7 +125,7 @@
 	}
 	
 	;history
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	Send, qmh%MothraID%{Enter}
 	GrabScreen()
 	WinActivate, Mothra Screens.xlsm - Excel
@@ -131,7 +135,7 @@
 	NextScreen = %clipboard%
 	ifInString, NextScreen, %NextScreenGo%
 	{
-		WinActivate, AutoMothra
+		WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 		send, n
 		GrabScreen()
 		WinActivate, Mothra Screens.xlsm - Excel
@@ -142,7 +146,7 @@
 	;conclude
 	xl.Run("ClearPII")
 	clipboard = %OriginalClipboard%
-	WinActivate, AutoMothra
+	WinActivate, dyad.gdc.ucdavis.edu - PuTTY
 	WinMove, %Title%,, %X%, %Y%, %Width%, %Height%
 	WinActivate, Mothra Screens.xlsm - Excel
 	Return
@@ -167,7 +171,7 @@
 
 
 ; Control+S saves the script and if the script is in focus, reloads the script
-#IfWinActive, *C:\Users\eduque\OneDrive - UC Davis\Scripts\MothraScraperTest.ahk - Notepad++
+#IfWinActive, *C:\Users\eduque\Downloads\MothraScraper.ahk - Notepad++
 ~^s::
 	sleep 100
 	reload
@@ -177,19 +181,19 @@
 
 
 
-	WindowGetRect(AutoMothra) {
-    if hwnd := WinExist(AutoMothra) {
-        VarSetCapacity(rect, 16, 0)
-        DllCall("GetClientRect", "Ptr", hwnd, "Ptr", &rect)
-        return {width: NumGet(rect, 8, "Int"), height: NumGet(rect, 12, "Int")}
-		}
-	}
+	;WindowGetRect(dyad.gdc.ucdavis.edu - PuTTY) {
+    ;if hwnd := WinExist(dyad.gdc.ucdavis.edu - PuTTY) {
+    ;    VarSetCapacity(rect, 16, 0)
+    ;    DllCall("GetClientRect", "Ptr", hwnd, "Ptr", &rect)
+    ;    return {width: NumGet(rect, 8, "Int"), height: NumGet(rect, 12, "Int")}
+;		}
+	;}
 	
 	
 	GrabScreen(){
-		rect := WindowGetRect("AutoMothra")
+		WinGetPos, , , xw, xy, dyad.gdc.ucdavis.edu - PuTTY
 		Sleep, 300
-		MouseClickDrag, left, 1, 1, rect.width, rect.height
+		MouseClickDrag, left, 1, 1, xw, xy
 		NewSelectAll = %Clipboard%
 		StillLoading := "__"
 		ObjectsLoading := "Enter Searchable ID Number"
