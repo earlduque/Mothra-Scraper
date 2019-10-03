@@ -1,7 +1,9 @@
 # Mothra-Scraper
-Publish Date: 9/6/2017
-Updated: 9/13/2017
-Created by: eduque
+- Publish Date: 9/6/2017
+- Updated: 10/3/2019
+- Created by: eduque
+
+[Final update, 10/3/2019] This repo was brought up to date so that we could use it one last time to assess accounts quickly for a campus incident. The main change was updating the AHK script to stop using deprecated functions. No more updates are planned. The final versions of the xlsm, ahk, and exe have been uploaded.
 
 All included files are open source, the VBA code in the excel file is not locked.
 
